@@ -1,0 +1,10 @@
+Bundle-Name: ShoppingCartSvc-api
+Bundle-SymbolicName: ShoppingCartSvc.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	ShoppingCartSvc.exception,\
+	ShoppingCartSvc.model,\
+	ShoppingCartSvc.service,\
+	ShoppingCartSvc.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../ShoppingCartSvc-service/service.xml
