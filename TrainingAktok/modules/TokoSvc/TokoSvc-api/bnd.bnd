@@ -1,0 +1,10 @@
+Bundle-Name: TokoSvc-api
+Bundle-SymbolicName: TokoSvc.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	TokoSvc.exception,\
+	TokoSvc.model,\
+	TokoSvc.service,\
+	TokoSvc.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../TokoSvc-service/service.xml

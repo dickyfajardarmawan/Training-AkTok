@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.1.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_1_0.dtd">
+
+<service-builder package-path="OrderSvc">
+	<namespace>master</namespace>
+	<!--<entity data-source="sampleDataSource" local-service="true" name="Foo" remote-service="false" session-factory="sampleSessionFactory" table="foo" tx-manager="sampleTransactionManager uuid="true"">-->
+	<entity local-service="true" name="Order" remote-service="true" uuid="true">
+		<!-- PK fields -->
+
+		<column name="id_order" primary="true" type="String" />
+
+		<!-- Audit fields -->
+		
+		<column type="long" name="total_harga"></column>
+		<column type="Date" name="tanggal_pemesanan"></column>
+		<column type="Date" name="tanggal_ekspetasi_pengiriman"></column>
+		<column type="String" name="status_order"></column>
+		<column type="String" name="status_pembayaran_keseluruhan"></column>
+		<column type="String" name="status_pengiriman_keseluruhan"></column>
+		<column type="String" name="catatan"></column>
+		<column type="Date" name="create_date"/>
+		<column type="Date" name="modified_date"/>
+		<column type="String" name="id_metode_pembayaran"></column>
+	</entity>
+</service-builder>

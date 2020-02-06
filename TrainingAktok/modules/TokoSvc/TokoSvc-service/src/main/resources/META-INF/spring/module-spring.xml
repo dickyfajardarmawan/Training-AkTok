@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<beans
+	default-destroy-method="destroy"
+	default-init-method="afterPropertiesSet"
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+>
+	<bean class="TokoSvc.service.impl.TokoLocalServiceImpl" id="TokoSvc.service.TokoLocalService" />
+	<bean class="TokoSvc.service.impl.TokoServiceImpl" id="TokoSvc.service.TokoService" />
+	<bean class="TokoSvc.service.persistence.impl.TokoPersistenceImpl" id="TokoSvc.service.persistence.TokoPersistence" parent="basePersistence" />
+</beans>

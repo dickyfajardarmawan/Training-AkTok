@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<beans
+	default-destroy-method="destroy"
+	default-init-method="afterPropertiesSet"
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+>
+	<bean class="OrderSvc.service.impl.OrderLocalServiceImpl" id="OrderSvc.service.OrderLocalService" />
+	<bean class="OrderSvc.service.impl.OrderServiceImpl" id="OrderSvc.service.OrderService" />
+	<bean class="OrderSvc.service.persistence.impl.OrderPersistenceImpl" id="OrderSvc.service.persistence.OrderPersistence" parent="basePersistence" />
+</beans>

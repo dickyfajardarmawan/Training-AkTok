@@ -1,0 +1,1 @@
+create index IX_BA8F3DB2 on master_Toko (uuid_[$COLUMN_LENGTH:75$]);

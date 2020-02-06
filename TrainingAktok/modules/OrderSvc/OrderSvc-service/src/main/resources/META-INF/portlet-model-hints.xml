@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="OrderSvc.model.Order">
+		<field name="uuid" type="String" />
+		<field name="id_order" type="String" />
+		<field name="total_harga" type="long" />
+		<field name="tanggal_pemesanan" type="Date" />
+		<field name="tanggal_ekspetasi_pengiriman" type="Date" />
+		<field name="status_order" type="String" />
+		<field name="status_pembayaran_keseluruhan" type="String" />
+		<field name="status_pengiriman_keseluruhan" type="String" />
+		<field name="catatan" type="String" />
+		<field name="create_date" type="Date" />
+		<field name="modified_date" type="Date" />
+		<field name="id_metode_pembayaran" type="String" />
+	</model>
+</model-hints>

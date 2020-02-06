@@ -1,0 +1,10 @@
+Bundle-Name: OrderSvc-api
+Bundle-SymbolicName: OrderSvc.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	OrderSvc.exception,\
+	OrderSvc.model,\
+	OrderSvc.service,\
+	OrderSvc.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../OrderSvc-service/service.xml

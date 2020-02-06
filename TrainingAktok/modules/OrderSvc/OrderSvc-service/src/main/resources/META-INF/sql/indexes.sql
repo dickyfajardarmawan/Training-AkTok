@@ -1,0 +1,1 @@
+create index IX_662E0B3D on master_Order (uuid_[$COLUMN_LENGTH:75$]);

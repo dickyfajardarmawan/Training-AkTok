@@ -1,0 +1,1 @@
+create index IX_3F5861C9 on master_Pengiriman (uuid_[$COLUMN_LENGTH:75$]);

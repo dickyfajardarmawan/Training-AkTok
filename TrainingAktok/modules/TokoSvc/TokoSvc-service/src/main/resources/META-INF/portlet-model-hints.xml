@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="TokoSvc.model.Toko">
+		<field name="uuid" type="String" />
+		<field name="id_toko" type="String" />
+		<field name="nama_toko" type="String" />
+		<field name="nama_depan_pemilik" type="String" />
+		<field name="nama_belakang_pemilik" type="String" />
+		<field name="nomor_hp" type="long" />
+		<field name="status_toko" type="long" />
+		<field name="tanggal_pendaftaran" type="Date" />
+		<field name="password" type="String" />
+		<field name="pin" type="long" />
+		<field name="id_distributor" type="String" />
+	</model>
+</model-hints>

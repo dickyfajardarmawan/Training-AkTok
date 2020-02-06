@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="UploadBuktiSpjSvc.model.Pengiriman">
+		<field name="uuid" type="String" />
+		<field name="id_pengiriman" type="String" />
+		<field name="tanggal_pengiriman" type="Date" />
+		<field name="status_pengiriman" type="String" />
+		<field name="tanggal_penerimaan" type="Date" />
+		<field name="bukti_pengiriman" type="String" />
+		<field name="create_date" type="Date" />
+		<field name="modified_date" type="Date" />
+		<field name="id_order" type="String" />
+		<field name="id_toko" type="String" />
+	</model>
+</model-hints>
