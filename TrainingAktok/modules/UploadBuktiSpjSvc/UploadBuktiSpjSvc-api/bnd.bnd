@@ -1,0 +1,10 @@
+Bundle-Name: UploadBuktiSpjSvc-api
+Bundle-SymbolicName: UploadBuktiSpjSvc.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	UploadBuktiSpjSvc.exception,\
+	UploadBuktiSpjSvc.model,\
+	UploadBuktiSpjSvc.service,\
+	UploadBuktiSpjSvc.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../UploadBuktiSpjSvc-service/service.xml
