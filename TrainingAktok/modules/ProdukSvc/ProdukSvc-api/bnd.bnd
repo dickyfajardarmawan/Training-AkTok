@@ -1,0 +1,10 @@
+Bundle-Name: ProdukSvc-api
+Bundle-SymbolicName: ProdukSvc.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	ProdukSvc.exception,\
+	ProdukSvc.model,\
+	ProdukSvc.service,\
+	ProdukSvc.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../ProdukSvc-service/service.xml

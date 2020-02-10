@@ -1,0 +1,4 @@
+Bundle-Name: ProdukView
+Bundle-SymbolicName: ProdukView
+Bundle-Version: 1.0.0
+Export-Package: ProdukView.constants

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<beans
+	default-destroy-method="destroy"
+	default-init-method="afterPropertiesSet"
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+>
+	<bean class="ProdukSvc.service.impl.ProdukLocalServiceImpl" id="ProdukSvc.service.ProdukLocalService" />
+	<bean class="ProdukSvc.service.impl.ProdukServiceImpl" id="ProdukSvc.service.ProdukService" />
+	<bean class="ProdukSvc.service.persistence.impl.ProdukPersistenceImpl" id="ProdukSvc.service.persistence.ProdukPersistence" parent="basePersistence" />
+</beans>

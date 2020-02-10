@@ -1,0 +1,1 @@
+create index IX_757659A4 on master_Produk (uuid_[$COLUMN_LENGTH:75$]);
