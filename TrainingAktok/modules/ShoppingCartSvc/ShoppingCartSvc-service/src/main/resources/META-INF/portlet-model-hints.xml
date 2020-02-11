@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="ShoppingCartSvc.model.Cart">
+		<field name="uuid" type="String" />
+		<field name="id_cart" type="String" />
+		<field name="id_produk" type="String" />
+		<field name="id_user" type="Long" />
+		<field name="jumlah_produk" type="long" />
+		<field name="sub_total" type="long" />
+	</model>
+	<model name="ShoppingCartSvc.model.Produk">
+		<field name="uuid" type="String" />
+		<field name="id_produk" type="String" />
+		<field name="create_date" type="Date" />
+		<field name="modified_date" type="Date" />
+		<field name="nama_produk" type="String" />
+		<field name="harga_produk" type="long" />
+		<field name="kelipatan_produk" type="long" />
+	</model>
+</model-hints>
