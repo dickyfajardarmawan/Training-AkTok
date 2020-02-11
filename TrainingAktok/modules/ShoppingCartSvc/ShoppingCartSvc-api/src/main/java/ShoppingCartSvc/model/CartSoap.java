@@ -36,7 +36,7 @@ public class CartSoap implements Serializable {
 		soapModel.setUuid(model.getUuid());
 		soapModel.setId_cart(model.getId_cart());
 		soapModel.setId_produk(model.getId_produk());
-		soapModel.setId_toko(model.getId_toko());
+		soapModel.setId_user(model.getId_user());
 		soapModel.setJumlah_produk(model.getJumlah_produk());
 		soapModel.setSub_total(model.getSub_total());
 
@@ -115,12 +115,12 @@ public class CartSoap implements Serializable {
 		_id_produk = id_produk;
 	}
 
-	public String getId_toko() {
-		return _id_toko;
+	public Long getId_user() {
+		return _id_user;
 	}
 
-	public void setId_toko(String id_toko) {
-		_id_toko = id_toko;
+	public void setId_user(Long id_user) {
+		_id_user = id_user;
 	}
 
 	public long getJumlah_produk() {
@@ -142,7 +142,7 @@ public class CartSoap implements Serializable {
 	private String _uuid;
 	private String _id_cart;
 	private String _id_produk;
-	private String _id_toko;
+	private Long _id_user;
 	private long _jumlah_produk;
 	private long _sub_total;
 }

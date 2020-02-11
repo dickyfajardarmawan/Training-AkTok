@@ -69,7 +69,7 @@ public interface CartLocalService extends BaseLocalService,
 	@Indexable(type = IndexableType.REINDEX)
 	public Cart addCart(Cart cart);
 
-	public Cart addCart(String id_produk, String id_toko, long jumlah_produk,
+	public Cart addCart(String id_produk, long id_user, long jumlah_produk,
 		long sub_total);
 
 	/**
@@ -177,9 +177,6 @@ public interface CartLocalService extends BaseLocalService,
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public Cart fetchCart(String id_cart);
 
-	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
-	public List<JSONObject> getAllCart();
-
 	/**
 	* Returns the cart with the primary key.
 	*
@@ -189,6 +186,9 @@ public interface CartLocalService extends BaseLocalService,
 	*/
 	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 	public Cart getCart(String id_cart) throws PortalException;
+
+	@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+	public List<JSONObject> getCartByIdUser(long idUser);
 
 	/**
 	* Returns a range of all the carts.

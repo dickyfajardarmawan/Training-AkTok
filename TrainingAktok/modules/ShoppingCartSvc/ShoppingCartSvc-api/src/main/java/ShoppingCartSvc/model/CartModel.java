@@ -106,19 +106,18 @@ public interface CartModel extends BaseModel<Cart> {
 	public void setId_produk(String id_produk);
 
 	/**
-	 * Returns the id_toko of this cart.
+	 * Returns the id_user of this cart.
 	 *
-	 * @return the id_toko of this cart
+	 * @return the id_user of this cart
 	 */
-	@AutoEscape
-	public String getId_toko();
+	public Long getId_user();
 
 	/**
-	 * Sets the id_toko of this cart.
+	 * Sets the id_user of this cart.
 	 *
-	 * @param id_toko the id_toko of this cart
+	 * @param id_user the id_user of this cart
 	 */
-	public void setId_toko(String id_toko);
+	public void setId_user(Long id_user);
 
 	/**
 	 * Returns the jumlah_produk of this cart.

@@ -13,7 +13,7 @@
 		<!-- Other fields -->
 
 		<column name="id_produk" type="String" />
-		<column name="id_toko" type="String" />
+		<column name="id_user" type="Long" />
 		<column name="jumlah_produk" type="long" />
 		<column name="sub_total" type="long" />
 	</entity>

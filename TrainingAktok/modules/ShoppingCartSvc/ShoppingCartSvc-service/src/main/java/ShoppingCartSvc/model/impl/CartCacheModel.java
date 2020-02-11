@@ -70,8 +70,8 @@ public class CartCacheModel implements CacheModel<Cart>, Externalizable {
 		sb.append(id_cart);
 		sb.append(", id_produk=");
 		sb.append(id_produk);
-		sb.append(", id_toko=");
-		sb.append(id_toko);
+		sb.append(", id_user=");
+		sb.append(id_user);
 		sb.append(", jumlah_produk=");
 		sb.append(jumlah_produk);
 		sb.append(", sub_total=");
@@ -106,13 +106,7 @@ public class CartCacheModel implements CacheModel<Cart>, Externalizable {
 			cartImpl.setId_produk(id_produk);
 		}
 
-		if (id_toko == null) {
-			cartImpl.setId_toko("");
-		}
-		else {
-			cartImpl.setId_toko(id_toko);
-		}
-
+		cartImpl.setId_user(id_user);
 		cartImpl.setJumlah_produk(jumlah_produk);
 		cartImpl.setSub_total(sub_total);
 
@@ -126,7 +120,8 @@ public class CartCacheModel implements CacheModel<Cart>, Externalizable {
 		uuid = objectInput.readUTF();
 		id_cart = objectInput.readUTF();
 		id_produk = objectInput.readUTF();
-		id_toko = objectInput.readUTF();
+
+		id_user = objectInput.readLong();
 
 		jumlah_produk = objectInput.readLong();
 
@@ -157,12 +152,7 @@ public class CartCacheModel implements CacheModel<Cart>, Externalizable {
 			objectOutput.writeUTF(id_produk);
 		}
 
-		if (id_toko == null) {
-			objectOutput.writeUTF("");
-		}
-		else {
-			objectOutput.writeUTF(id_toko);
-		}
+		objectOutput.writeLong(id_user);
 
 		objectOutput.writeLong(jumlah_produk);
 
@@ -172,7 +162,7 @@ public class CartCacheModel implements CacheModel<Cart>, Externalizable {
 	public String uuid;
 	public String id_cart;
 	public String id_produk;
-	public String id_toko;
+	public long id_user;
 	public long jumlah_produk;
 	public long sub_total;
 }

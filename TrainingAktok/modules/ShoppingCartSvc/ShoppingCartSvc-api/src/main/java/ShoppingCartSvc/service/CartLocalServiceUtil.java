@@ -55,8 +55,8 @@ public class CartLocalServiceUtil {
 	}
 
 	public static ShoppingCartSvc.model.Cart addCart(String id_produk,
-		String id_toko, long jumlah_produk, long sub_total) {
-		return getService().addCart(id_produk, id_toko, jumlah_produk, sub_total);
+		long id_user, long jumlah_produk, long sub_total) {
+		return getService().addCart(id_produk, id_user, jumlah_produk, sub_total);
 	}
 
 	/**
@@ -187,10 +187,6 @@ public class CartLocalServiceUtil {
 		return getService().fetchCart(id_cart);
 	}
 
-	public static java.util.List<com.liferay.portal.kernel.json.JSONObject> getAllCart() {
-		return getService().getAllCart();
-	}
-
 	/**
 	* Returns the cart with the primary key.
 	*
@@ -201,6 +197,11 @@ public class CartLocalServiceUtil {
 	public static ShoppingCartSvc.model.Cart getCart(String id_cart)
 		throws com.liferay.portal.kernel.exception.PortalException {
 		return getService().getCart(id_cart);
+	}
+
+	public static java.util.List<com.liferay.portal.kernel.json.JSONObject> getCartByIdUser(
+		long idUser) {
+		return getService().getCartByIdUser(idUser);
 	}
 
 	/**

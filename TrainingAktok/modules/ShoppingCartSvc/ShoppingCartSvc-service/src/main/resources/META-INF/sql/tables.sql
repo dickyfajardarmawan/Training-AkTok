@@ -2,7 +2,7 @@ create table master_Cart (
 	uuid_ VARCHAR(75) null,
 	id_cart VARCHAR(75) not null primary key,
 	id_produk VARCHAR(75) null,
-	id_toko VARCHAR(75) null,
+	id_user LONG,
 	jumlah_produk LONG,
 	sub_total LONG
 );

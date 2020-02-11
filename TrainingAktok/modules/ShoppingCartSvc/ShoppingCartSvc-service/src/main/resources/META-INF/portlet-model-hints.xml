@@ -5,7 +5,7 @@
 		<field name="uuid" type="String" />
 		<field name="id_cart" type="String" />
 		<field name="id_produk" type="String" />
-		<field name="id_toko" type="String" />
+		<field name="id_user" type="Long" />
 		<field name="jumlah_produk" type="long" />
 		<field name="sub_total" type="long" />
 	</model>

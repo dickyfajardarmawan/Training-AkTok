@@ -5,6 +5,7 @@ import ShoppingCartView.constants.ShoppingCartViewPortletKeys;
 import com.liferay.portal.kernel.json.JSONFactoryUtil;
 import com.liferay.portal.kernel.json.JSONObject;
 import com.liferay.portal.kernel.portlet.bridges.mvc.MVCPortlet;
+import com.liferay.portal.kernel.security.auth.PrincipalThreadLocal;
 import com.liferay.portal.kernel.util.ParamUtil;
 
 import java.io.IOException;
@@ -40,8 +41,9 @@ import ShoppingCartSvc.service.ProdukLocalServiceUtil;
 )
 public class ShoppingCartViewPortlet extends MVCPortlet {
 	public void serveResource(ResourceRequest request, ResourceResponse response) throws IOException {
+		long idUser = PrincipalThreadLocal.getUserId();
 		List<JSONObject> listJSONProduk = ProdukLocalServiceUtil.getAllProduk();
-		List<JSONObject> listJSONCart = CartLocalServiceUtil.getAllCart();
+		List<JSONObject> listJSONCart = CartLocalServiceUtil.getCartByIdUser(idUser);
 		response.setContentType("text/html");
 		PrintWriter writer = response.getWriter();
 		JSONObject jsonObject = JSONFactoryUtil.createJSONObject();
@@ -54,14 +56,14 @@ public class ShoppingCartViewPortlet extends MVCPortlet {
 	
 	public void addCart(ActionRequest actionRequest, ActionResponse actionResponse) {
 		String idProduk = ParamUtil.getString(actionRequest, "idProduk");
-		String idToko = ParamUtil.getString(actionRequest, "idToko");
+		long idUser = PrincipalThreadLocal.getUserId();
 		long jumlahProduk = ParamUtil.getLong(actionRequest, "jumlahProduk");
 		long subTotal = ParamUtil.getLong(actionRequest, "subTotal");
 		System.out.println("id produk = " + idProduk);
-		System.out.println("id Toko = " + idToko);
+		System.out.println("id User = " + idUser);
 		System.out.println("jumlah produk = " + jumlahProduk);
 		System.out.println("jumlah produk = " + subTotal);
-		CartLocalServiceUtil.addCart(idProduk, idToko, jumlahProduk, subTotal);
+		CartLocalServiceUtil.addCart(idProduk, idUser, jumlahProduk, subTotal);
 	}
 	
 	public void deleteCartById(ActionRequest actionRequest, ActionResponse actionResponse) {

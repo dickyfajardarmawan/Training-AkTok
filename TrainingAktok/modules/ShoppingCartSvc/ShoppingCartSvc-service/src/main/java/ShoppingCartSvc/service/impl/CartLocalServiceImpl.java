@@ -45,20 +45,20 @@ public class CartLocalServiceImpl extends CartLocalServiceBaseImpl {
 	 *
 	 * Never reference this class directly. Always use {@link ShoppingCartSvc.service.CartLocalServiceUtil} to access the cart local service.
 	 */
-	public Cart addCart(String id_produk, String id_toko, long jumlah_produk, long sub_total) {
+	public Cart addCart(String id_produk, long id_user, long jumlah_produk, long sub_total) {
 		String cart_id = "CART-" + counterLocalService.increment(Cart.class.getName());
 		Cart cart = cartPersistence.create(cart_id);
 		cart.setId_produk(id_produk);
-		cart.setId_toko(id_toko);
+		cart.setId_user(id_user);
 		cart.setJumlah_produk(jumlah_produk);
 		cart.setSub_total(sub_total);
 		cartPersistence.update(cart);
 		return cart;
 	}
 	
-	public List<JSONObject> getAllCart(){
+	public List<JSONObject> getCartByIdUser(long idUser){
 		Session session = cartPersistence.openSession();
-		String quertyString = "select c.id_cart, p.nama_produk, c.sub_total, c.jumlah_produk from master_Produk p JOIN master_cart c ON p.id_produk = c.id_produk";
+		String quertyString = "select c.id_cart, p.nama_produk, c.sub_total, c.jumlah_produk from master_Produk p JOIN master_cart c ON p.id_produk = c.id_produk WHERE c.id_user = " + idUser;
 		SQLQuery query = session.createSQLQuery(quertyString);
 		List<Object[]> listObject = query.list();
 		List<JSONObject> listJSON = new ArrayList<>();

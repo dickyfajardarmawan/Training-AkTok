@@ -1,8 +1,5 @@
 <%@ include file="/init.jsp"%>
 
-<style>
-
-</style>
 
 <div class="container">
 	<button type="button" data-toggle="modal" data-target="#modalLihatKeranjang" class="btn btn-warning">Lihat Keranjang</button>
@@ -30,7 +27,6 @@
       <div class="modal-body">
         <form id="formKeranjang">
         	<input type="hidden" id="produkId" name="<portlet:namespace/>idProduk">
-        	<input type="hidden" id="tokoId" value="TOKO-345" name="<portlet:namespace/>idToko">
 			<div class="form-group">
 				<label>Nama Produk</label> 
 				<input type="text" class="form-control" id="inputNamaProduk" readonly>
@@ -221,6 +217,7 @@
 				on:{
 					success:function(){
 						console.log("sukses");
+						getAllCart();
 					}
 				}
 			})

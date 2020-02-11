@@ -59,7 +59,7 @@ public class CartWrapper implements Cart, ModelWrapper<Cart> {
 		attributes.put("uuid", getUuid());
 		attributes.put("id_cart", getId_cart());
 		attributes.put("id_produk", getId_produk());
-		attributes.put("id_toko", getId_toko());
+		attributes.put("id_user", getId_user());
 		attributes.put("jumlah_produk", getJumlah_produk());
 		attributes.put("sub_total", getSub_total());
 
@@ -86,10 +86,10 @@ public class CartWrapper implements Cart, ModelWrapper<Cart> {
 			setId_produk(id_produk);
 		}
 
-		String id_toko = (String)attributes.get("id_toko");
+		Long id_user = (Long)attributes.get("id_user");
 
-		if (id_toko != null) {
-			setId_toko(id_toko);
+		if (id_user != null) {
+			setId_user(id_user);
 		}
 
 		Long jumlah_produk = (Long)attributes.get("jumlah_produk");
@@ -141,13 +141,13 @@ public class CartWrapper implements Cart, ModelWrapper<Cart> {
 	}
 
 	/**
-	* Returns the id_toko of this cart.
+	* Returns the id_user of this cart.
 	*
-	* @return the id_toko of this cart
+	* @return the id_user of this cart
 	*/
 	@Override
-	public String getId_toko() {
-		return _cart.getId_toko();
+	public Long getId_user() {
+		return _cart.getId_user();
 	}
 
 	/**
@@ -262,13 +262,13 @@ public class CartWrapper implements Cart, ModelWrapper<Cart> {
 	}
 
 	/**
-	* Sets the id_toko of this cart.
+	* Sets the id_user of this cart.
 	*
-	* @param id_toko the id_toko of this cart
+	* @param id_user the id_user of this cart
 	*/
 	@Override
-	public void setId_toko(String id_toko) {
-		_cart.setId_toko(id_toko);
+	public void setId_user(Long id_user) {
+		_cart.setId_user(id_user);
 	}
 
 	/**

@@ -64,7 +64,7 @@ public class CartModelImpl extends BaseModelImpl<Cart> implements CartModel {
 			{ "uuid_", Types.VARCHAR },
 			{ "id_cart", Types.VARCHAR },
 			{ "id_produk", Types.VARCHAR },
-			{ "id_toko", Types.VARCHAR },
+			{ "id_user", Types.BIGINT },
 			{ "jumlah_produk", Types.BIGINT },
 			{ "sub_total", Types.BIGINT }
 		};
@@ -74,12 +74,12 @@ public class CartModelImpl extends BaseModelImpl<Cart> implements CartModel {
 		TABLE_COLUMNS_MAP.put("uuid_", Types.VARCHAR);
 		TABLE_COLUMNS_MAP.put("id_cart", Types.VARCHAR);
 		TABLE_COLUMNS_MAP.put("id_produk", Types.VARCHAR);
-		TABLE_COLUMNS_MAP.put("id_toko", Types.VARCHAR);
+		TABLE_COLUMNS_MAP.put("id_user", Types.BIGINT);
 		TABLE_COLUMNS_MAP.put("jumlah_produk", Types.BIGINT);
 		TABLE_COLUMNS_MAP.put("sub_total", Types.BIGINT);
 	}
 
-	public static final String TABLE_SQL_CREATE = "create table master_Cart (uuid_ VARCHAR(75) null,id_cart VARCHAR(75) not null primary key,id_produk VARCHAR(75) null,id_toko VARCHAR(75) null,jumlah_produk LONG,sub_total LONG)";
+	public static final String TABLE_SQL_CREATE = "create table master_Cart (uuid_ VARCHAR(75) null,id_cart VARCHAR(75) not null primary key,id_produk VARCHAR(75) null,id_user LONG,jumlah_produk LONG,sub_total LONG)";
 	public static final String TABLE_SQL_DROP = "drop table master_Cart";
 	public static final String ORDER_BY_JPQL = " ORDER BY cart.id_cart ASC";
 	public static final String ORDER_BY_SQL = " ORDER BY master_Cart.id_cart ASC";
@@ -114,7 +114,7 @@ public class CartModelImpl extends BaseModelImpl<Cart> implements CartModel {
 		model.setUuid(soapModel.getUuid());
 		model.setId_cart(soapModel.getId_cart());
 		model.setId_produk(soapModel.getId_produk());
-		model.setId_toko(soapModel.getId_toko());
+		model.setId_user(soapModel.getId_user());
 		model.setJumlah_produk(soapModel.getJumlah_produk());
 		model.setSub_total(soapModel.getSub_total());
 
@@ -184,7 +184,7 @@ public class CartModelImpl extends BaseModelImpl<Cart> implements CartModel {
 		attributes.put("uuid", getUuid());
 		attributes.put("id_cart", getId_cart());
 		attributes.put("id_produk", getId_produk());
-		attributes.put("id_toko", getId_toko());
+		attributes.put("id_user", getId_user());
 		attributes.put("jumlah_produk", getJumlah_produk());
 		attributes.put("sub_total", getSub_total());
 
@@ -214,10 +214,10 @@ public class CartModelImpl extends BaseModelImpl<Cart> implements CartModel {
 			setId_produk(id_produk);
 		}
 
-		String id_toko = (String)attributes.get("id_toko");
+		Long id_user = (Long)attributes.get("id_user");
 
-		if (id_toko != null) {
-			setId_toko(id_toko);
+		if (id_user != null) {
+			setId_user(id_user);
 		}
 
 		Long jumlah_produk = (Long)attributes.get("jumlah_produk");
@@ -291,18 +291,13 @@ public class CartModelImpl extends BaseModelImpl<Cart> implements CartModel {
 
 	@JSON
 	@Override
-	public String getId_toko() {
-		if (_id_toko == null) {
-			return "";
-		}
-		else {
-			return _id_toko;
-		}
+	public Long getId_user() {
+		return _id_user;
 	}
 
 	@Override
-	public void setId_toko(String id_toko) {
-		_id_toko = id_toko;
+	public void setId_user(Long id_user) {
+		_id_user = id_user;
 	}
 
 	@JSON
@@ -348,7 +343,7 @@ public class CartModelImpl extends BaseModelImpl<Cart> implements CartModel {
 		cartImpl.setUuid(getUuid());
 		cartImpl.setId_cart(getId_cart());
 		cartImpl.setId_produk(getId_produk());
-		cartImpl.setId_toko(getId_toko());
+		cartImpl.setId_user(getId_user());
 		cartImpl.setJumlah_produk(getJumlah_produk());
 		cartImpl.setSub_total(getSub_total());
 
@@ -438,13 +433,7 @@ public class CartModelImpl extends BaseModelImpl<Cart> implements CartModel {
 			cartCacheModel.id_produk = null;
 		}
 
-		cartCacheModel.id_toko = getId_toko();
-
-		String id_toko = cartCacheModel.id_toko;
-
-		if ((id_toko != null) && (id_toko.length() == 0)) {
-			cartCacheModel.id_toko = null;
-		}
+		cartCacheModel.id_user = getId_user();
 
 		cartCacheModel.jumlah_produk = getJumlah_produk();
 
@@ -463,8 +452,8 @@ public class CartModelImpl extends BaseModelImpl<Cart> implements CartModel {
 		sb.append(getId_cart());
 		sb.append(", id_produk=");
 		sb.append(getId_produk());
-		sb.append(", id_toko=");
-		sb.append(getId_toko());
+		sb.append(", id_user=");
+		sb.append(getId_user());
 		sb.append(", jumlah_produk=");
 		sb.append(getJumlah_produk());
 		sb.append(", sub_total=");
@@ -495,8 +484,8 @@ public class CartModelImpl extends BaseModelImpl<Cart> implements CartModel {
 		sb.append(getId_produk());
 		sb.append("]]></column-value></column>");
 		sb.append(
-			"<column><column-name>id_toko</column-name><column-value><![CDATA[");
-		sb.append(getId_toko());
+			"<column><column-name>id_user</column-name><column-value><![CDATA[");
+		sb.append(getId_user());
 		sb.append("]]></column-value></column>");
 		sb.append(
 			"<column><column-name>jumlah_produk</column-name><column-value><![CDATA[");
@@ -520,7 +509,7 @@ public class CartModelImpl extends BaseModelImpl<Cart> implements CartModel {
 	private String _originalUuid;
 	private String _id_cart;
 	private String _id_produk;
-	private String _id_toko;
+	private Long _id_user;
 	private long _jumlah_produk;
 	private long _sub_total;
 	private long _columnBitmask;

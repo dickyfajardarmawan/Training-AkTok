@@ -44,9 +44,9 @@ public class CartLocalServiceWrapper implements CartLocalService,
 	}
 
 	@Override
-	public ShoppingCartSvc.model.Cart addCart(String id_produk, String id_toko,
+	public ShoppingCartSvc.model.Cart addCart(String id_produk, long id_user,
 		long jumlah_produk, long sub_total) {
-		return _cartLocalService.addCart(id_produk, id_toko, jumlah_produk,
+		return _cartLocalService.addCart(id_produk, id_user, jumlah_produk,
 			sub_total);
 	}
 
@@ -190,11 +190,6 @@ public class CartLocalServiceWrapper implements CartLocalService,
 		return _cartLocalService.fetchCart(id_cart);
 	}
 
-	@Override
-	public java.util.List<com.liferay.portal.kernel.json.JSONObject> getAllCart() {
-		return _cartLocalService.getAllCart();
-	}
-
 	/**
 	* Returns the cart with the primary key.
 	*
@@ -206,6 +201,12 @@ public class CartLocalServiceWrapper implements CartLocalService,
 	public ShoppingCartSvc.model.Cart getCart(String id_cart)
 		throws com.liferay.portal.kernel.exception.PortalException {
 		return _cartLocalService.getCart(id_cart);
+	}
+
+	@Override
+	public java.util.List<com.liferay.portal.kernel.json.JSONObject> getCartByIdUser(
+		long idUser) {
+		return _cartLocalService.getCartByIdUser(idUser);
 	}
 
 	/**
