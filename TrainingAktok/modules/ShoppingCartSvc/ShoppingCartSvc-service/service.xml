@@ -2,49 +2,32 @@
 <!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.1.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_1_0.dtd">
 
 <service-builder package-path="ShoppingCartSvc">
-	<namespace>FOO</namespace>
+	<namespace>master</namespace>
 	<!--<entity data-source="sampleDataSource" local-service="true" name="Foo" remote-service="false" session-factory="sampleSessionFactory" table="foo" tx-manager="sampleTransactionManager uuid="true"">-->
-	<entity local-service="true" name="Foo" remote-service="true" uuid="true">
+	<entity local-service="true" name="Cart" remote-service="true" uuid="true">
 
 		<!-- PK fields -->
 
-		<column name="fooId" primary="true" type="long" />
-
-		<!-- Group instance -->
-
-		<column name="groupId" type="long" />
-
-		<!-- Audit fields -->
-
-		<column name="companyId" type="long" />
-		<column name="userId" type="long" />
-		<column name="userName" type="String" />
-		<column name="createDate" type="Date" />
-		<column name="modifiedDate" type="Date" />
+		<column name="id_cart" primary="true" type="String" />
 
 		<!-- Other fields -->
 
-		<column name="field1" type="String" />
-		<column name="field2" type="boolean" />
-		<column name="field3" type="int" />
-		<column name="field4" type="Date" />
-		<column name="field5" type="String" />
+		<column name="id_produk" type="String" />
+		<column name="id_toko" type="String" />
+		<column name="jumlah_produk" type="long" />
+		<column name="sub_total" type="long" />
+	</entity>
+	
+	<entity local-service="true" name="Produk" remote-service="true" uuid="true">
 
-		<!-- Order -->
+		<column name="id_produk" primary="true" type="String" />
 
-		<order by="asc">
-			<order-column name="field1" />
-		</order>
+		<column name="create_date" type="Date" />
+		<column name="modified_date" type="Date" />
 
-		<!-- Finder methods -->
+		<column name="nama_produk" type="String" />
+		<column name="harga_produk" type="long" />
+		<column name="kelipatan_produk" type="long"></column>
 
-		<finder name="Field2" return-type="Collection">
-			<finder-column name="field2" />
-		</finder>
-
-		<!-- References -->
-
-		<reference entity="AssetEntry" package-path="com.liferay.portlet.asset" />
-		<reference entity="AssetTag" package-path="com.liferay.portlet.asset" />
 	</entity>
 </service-builder>
