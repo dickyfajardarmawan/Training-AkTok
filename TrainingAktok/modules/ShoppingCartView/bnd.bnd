@@ -1,4 +1,0 @@
-Bundle-Name: ShoppingCartView
-Bundle-SymbolicName: ShoppingCartView
-Bundle-Version: 1.0.0
-Export-Package: ShoppingCartView.constants
