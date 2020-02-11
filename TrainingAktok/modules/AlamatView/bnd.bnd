@@ -1,0 +1,4 @@
+Bundle-Name: AlamatView
+Bundle-SymbolicName: AlamatView
+Bundle-Version: 1.0.0
+Export-Package: AlamatView.constants
