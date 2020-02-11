@@ -1,0 +1,5 @@
+Bundle-Name: AlamatSvc-service
+Bundle-SymbolicName: AlamatSvc.service
+Bundle-Version: 1.0.0
+Liferay-Require-SchemaVersion: 1.0.0
+Liferay-Service: true

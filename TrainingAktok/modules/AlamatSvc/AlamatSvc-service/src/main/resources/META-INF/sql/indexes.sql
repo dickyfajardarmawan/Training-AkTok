@@ -1,0 +1,1 @@
+create index IX_1533DE67 on master_Alamat (uuid_[$COLUMN_LENGTH:75$]);
